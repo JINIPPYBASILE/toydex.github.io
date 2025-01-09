@@ -15,8 +15,8 @@ body {
   /* ============================================================= */
   /* Primary Color
   ================================================================ */
-  --cd-primary-color:                    #8FB7D4;
-  --cd-primary-text-color:               #fff;
+  --cd-primary-color:                    #008cba;
+  --cd-primary-text-color:               #008cba;
 
   /* ============================================================= */
   /* Secondary Color
@@ -27,9 +27,9 @@ body {
   /* ============================================================= */
   /* Backgrounds
   ================================================================ */
-  --cd-body-background-color:            #f8f8f8;
-  --cd-content-background-color:         #ffffff;
-  --cd-faded-background-color:           #f8f8f8;
+  --cd-body-background-color:            #ffffff;
+  --cd-content-background-color:         #f8f8f8;
+  --cd-faded-background-color:           #ffffff;
 
   /* Background Extras */
   --cd-body-background-image:             url();
@@ -46,7 +46,7 @@ body {
   --cd-border-color:                     rgba(0, 0, 0, 0.125);
   --cd-border-width:                     1px;
   --cd-border-style:                     solid;
-  --cd-border-radius:                    1rem;
+  --cd-border-radius:                    0.3rem;
 
   /* ============================================================= */
   /* Navbar
@@ -62,8 +62,8 @@ body {
   /* ============================================================= */
   /* Main Fonts
   ================================================================ */
-  --cd-body-font-family:                 'Montserrat', sans-serif;
-  --cd-header-font-family:               'Comfortaa', sans-serif;
+  --cd-body-font-family:                 'arial', sans-serif;
+  --cd-header-font-family:               'arial', sans-serif;
 
 
   /* ============================================================= */
@@ -234,6 +234,14 @@ a:active {
   text-decoration: none;
 }
 
+.blue-links span a {
+  color:#008cba !important;
+}
+
+.blue-links span a:hover {
+  color:#004a63 !important;
+}
+
 /* ============================================================= */
 /* Navbar
 /* ============================================================= */
@@ -244,13 +252,13 @@ a:active {
 }
 
 .navbar .navbar-brand {
-  color: var(--cd-navbar-brand-color) !important;
-  font-size: 2rem;
+  color:#fff;
+  font-size: 1.45rem;
 }
 
 .navbar .navbar-brand:hover, 
 .navbar .navbar-brand:focus {
-  color: var(--cd-navbar-brand-color-hover) !important;
+  color: #fff
 }
 
 .navbar .navbar-nav .nav-link {
@@ -264,7 +272,9 @@ a:active {
 
 .navbar .navbar-toggler {
   color: var(--cd-navbar-link-color) !important;
-  border: none !important;
+  border: 1px solid #616161;
+  opacity:0.5;
+  transform:scale(1.4)
 }
 
 .navbar .nav-link {
@@ -282,6 +292,7 @@ a:active {
 /* Dropdowns
 /* This is for navbar dropdowns only
 /* ============================================================= */
+
 
 .navbar .dropdown-menu {
   color: var(--cd-navbar-dropdown-link-color) !important;
@@ -532,8 +543,6 @@ body {
 }
 
 #main-container {
-    min-height: calc(100vh - 105px);
-    padding: 1rem;
     -ms-flex: 1 1 auto!important;
     flex: 1 1 auto!important;
 }
