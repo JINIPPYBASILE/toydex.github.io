@@ -1,10 +1,52 @@
 <div class="footer p-md-5 p-4">
     <div class="container text-center text-sm">
 
+        <script>
+            $(document).ready(function(){
+   setInterval('updateClock()', 1000);
+});
 
-        <p class="pt-1" style="opacity: .3;">
+function updateClock (){
+ 	var currentTime = new Date ( );
+  	var currentHours = currentTime.getHours ( );
+  	var currentMinutes = currentTime.getMinutes ( );
+  	var currentSeconds = currentTime.getSeconds ( );
+
+  	// Pad the minutes and seconds with leading zeros, if required
+  	currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
+  	currentSeconds = ( currentSeconds < 10 ? "0" : "" ) + currentSeconds;
+
+  	// Choose either "AM" or "PM" as appropriate
+  	var timeOfDay = ( currentHours < 12 ) ? "AM" : "PM";
+
+  	// Convert the hours component to 12-hour format if needed
+  	currentHours = ( currentHours > 12 ) ? currentHours - 12 : currentHours;
+
+  	// Convert an hours component of "0" to "12"
+  	currentHours = ( currentHours == 0 ) ? 12 : currentHours;
+
+  	// Compose the string for display
+  	var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
+  	
+  	
+   	$("#clock").html(currentTimeString);	  	
+ }
+        </script>
+
+<div class="row no-gutters mx-auto justify-content-center">
+    <div class="mr-2" style="opacity:0.3;" id="clock"></div>
+
+        <p class="" style="opacity:0.3;">
+
+         
+
+
              <i class="fa-regular fa-copyright fa-fw mr-1"></i><i>add your username here</i> 2025
         </p>
-        <div><span class="mx-2 "><a class="footer-link" href="about.html">About</a></span><span class="mx-2"><a href="faq.html">FAQ</a></span><span class="mx-2"><a href="tickets.html">HelpDesk</a></span><span class="mx-2"><a href="rules.html">Rules</a></span><span class="mx-2"><a href="tos.html">TOS</a></span><span class="mx-2"><a href="masterlist.html">Search</a></span></div>
+</div>
+        <div class="blue-links"><span class="mx-2 "><a class="footer-link" href="about.html">About</a></span><span class="mx-2"><a href="faq.html">FAQ</a></span><span class="mx-2"><a href="tickets.html">HelpDesk</a></span><span class="mx-2"><a href="rules.html">Rules</a></span><span class="mx-2"><a href="tos.html">TOS</a></span><span class="mx-2"><a href="masterlist.html">Search</a></span></div>
     </div>  
 </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

@@ -37,7 +37,7 @@ body {
   /* ============================================================= */
   /* Text
   ================================================================ */
-  --cd-body-text-color:                  #303030;
+  --cd-body-text-color:                  #212529;
   --cd-faded-text-color:                 #575757;
 
   /* ============================================================= */
@@ -51,7 +51,7 @@ body {
   /* ============================================================= */
   /* Navbar
   ================================================================ */
-  --cd-navbar-background-color:          #222222;
+  --cd-navbar-background-color:          #212529;
   --cd-navbar-brand-color:               var(--cd-primary-color);
   --cd-navbar-brand-color-hover:         var(--cd-secondary-color);
   --cd-navbar-text-color:                var(--cd-content-background-color);
@@ -224,7 +224,7 @@ body {
 a,
 a:visited {
   color: var(--cd-link-text-color);
-  transition: color .2s ease-in-out;
+  transition: color .0s ease-in-out;
 }
 
 a:hover,
@@ -239,7 +239,8 @@ a:active {
 }
 
 .blue-links span a:hover {
-  color:#004a63 !important;
+  color:#00506b !important;
+  text-decoration: underline;
 }
 
 /* ============================================================= */
@@ -262,19 +263,19 @@ a:active {
 }
 
 .navbar .navbar-nav .nav-link {
-  color: var(--cd-navbar-link-color) !important;
+  color: hsla(0, 0%, 100%, .5) !important;
 }
 
 .navbar .navbar-nav .nav-link:hover, 
 .navbar .navbar-nav .nav-link:focus{
-  color: var(--cd-navbar-link-color-hover) !important;
+  color: #f8f8f8 !important;
 }
 
 .navbar .navbar-toggler {
   color: var(--cd-navbar-link-color) !important;
   border: 1px solid #616161;
   opacity:0.5;
-  transform:scale(1.4)
+  transform:scale(1.1)
 }
 
 .navbar .nav-link {
@@ -295,16 +296,19 @@ a:active {
 
 
 .navbar .dropdown-menu {
-  color: var(--cd-navbar-dropdown-link-color) !important;
-  background-color: var(--cd-navbar-dropdown-background-color) !important;
-  border-radius: var(--cd-navbar-dropdown-border-radius) !important;
-  border: none;
-  margin-top: 0;
+    background-color: #495057;
+    border: none;
+    border-bottom: .125em solid #212529;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin: 0;
+    color: hsla(0, 0%, 100%, .5) !important
 }
+
 
 .dropdown:hover .dropdown-menu,
 .dropdown-menu:hover{
-  display: block !important
+  display: block !important;
 }
 
 .navbar .dropdown-divider {
@@ -313,15 +317,15 @@ a:active {
 
 .navbar .dropdown-item,
 .navbar .dropdown-item-text {
-  color: var(--cd-navbar-dropdown-link-color) !important;
-  transition: color .2s ease, background .2s ease;
+  color:  hsla(0, 0%, 100%, .5);
+  transition: color .0s ease, background .0s ease;
 }
 
 .navbar .dropdown-item:hover, 
 .dropdown-item:focus,
 .dropdown-item:active {
-  color: var(--cd-navbar-dropdown-link-color-hover)!important;
-  background-color: var(--cd-navbar-dropdown-background-hover) !important;
+  color: #f8f8f8;
+  background-color: #212529;
 }
 
 .navbar .dropdown-header {
@@ -429,7 +433,7 @@ a:active {
 
 .btn.btn-primary,
 .badge.badge-primary {
-  color: var(--cd-button-text-color) !important;
+  color: #fff!important;
   background-color: var(--cd-button-background-color) !important;
   border-width: var(--cd-button-border-width) !important;
   border-style: var(--cd-button-border-style) !important;
@@ -445,7 +449,30 @@ a.badge.badge-primary:focus,
 a.badge.badge-primary:active  {
   color: var(--cd-button-text-color-hover) !important;
   border-color: var(--cd-button-border-color-hover) !important;
-  background-color: var(--cd-button-background-color-hover) !important;
+  background-color: #00506b !important;
+  box-shadow: none !important;
+}
+
+
+.btn.btn-secondary,
+.badge.badge-secondary {
+  color: #000!important;
+  background-color: #fff !important;
+  border-width: var(--cd-button-border-width) !important;
+  border-style: var(--cd-button-border-style) !important;
+  border-color: rgb(225, 225, 225);
+  border-radius: var(--cd-button-border-radius) !important;
+}
+
+.btn.btn-secondary:hover,
+.btn.btn-secondary:focus,
+.btn.btn-secondary:active,
+a.badge.badge-secondary:hover,
+a.badge.badge-secondary:focus,
+a.badge.badge-secondary:active  {
+  color: #000 !important;
+  border-color: var(--cd-button-border-color-hover) !important;
+  background-color: #d1d5d8 !important;
   box-shadow: none !important;
 }
 
@@ -468,8 +495,7 @@ a.badge.badge-primary:active  {
   background-color: var(--cd-input-background-color) !important;
   border-color: var(--cd-input-border-color-hover) !important;
 }
-
-
+ 
 /* ============================================================= */
 /* Scrollbar
 /* ============================================================= */
@@ -542,16 +568,6 @@ body {
   flex-direction: column;
 }
 
-#main-container {
-    -ms-flex: 1 1 auto!important;
-    flex: 1 1 auto!important;
-}
-
-@media (min-width: 768px) {
-    #main-container {
-        padding: 5rem 1.5rem;
-    }
-}
 
 /* Fades container in on load so its not as jarring */
 .softload {
@@ -574,10 +590,6 @@ p:last-child {
     margin-bottom: 0 !important;
 }
 
-/* Small container for more compact view */
-.container {
-  max-width: 950px !important;
-}
 
 /* Prevents awkward load in stutter */
 #charadex-gallery .list .card-body {
