@@ -275,7 +275,7 @@ a:active {
   color: var(--cd-navbar-link-color) !important;
   border: 1px solid #616161;
   opacity:0.5;
-  transform:scale(1.1)
+  transform:scale(1)
 }
 
 .navbar .nav-link {
@@ -457,7 +457,7 @@ a.badge.badge-primary:active  {
 .btn.btn-secondary,
 .badge.badge-secondary {
   color: #000!important;
-  background-color: #fff !important;
+  background-color: #f8f9fa!important;
   border-width: var(--cd-button-border-width) !important;
   border-style: var(--cd-button-border-style) !important;
   border-color: rgb(225, 225, 225);
@@ -471,11 +471,29 @@ a.badge.badge-secondary:hover,
 a.badge.badge-secondary:focus,
 a.badge.badge-secondary:active  {
   color: #000 !important;
-  border-color: var(--cd-button-border-color-hover) !important;
-  background-color: #d1d5d8 !important;
+  background-color: #e9ecef !important;
   box-shadow: none !important;
+  border-color:#cdcdcd
 }
 
+.btn-secondary-outline {
+  background-color:rgba(235,235,235,0);
+  border-color:#ced4da !important;
+  color:#ced4da !important;
+
+}
+
+.btn-secondary-outline:hover,
+.btn-secondary-outline:focus,
+.btn-secondary-outline:active {
+  background-color:#ced4da !important;
+  border-color:#a6aaaf !important;
+  color:#fff !important
+}
+
+.bg-white {
+  background-color:#fff !important
+}
 
 /* ============================================================= */
 /* Input
@@ -569,6 +587,7 @@ body {
 }
 
 
+
 /* Fades container in on load so its not as jarring */
 .softload {
   opacity: 0;
@@ -600,8 +619,52 @@ p:last-child {
   max-height: 200px;
 }
 
+
 .gallery-img {
-    max-height: 150px;
+    max-height: 160px;
+     object-fit: cover;
+     object-position:top
+}
+
+#wrapper {
+  overflow-x: hidden;
+}
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  width: 250px;
+  padding-top: 3.5rem;
+  background-color: #343a40;
+  color: #fff;
+  transition: width 0.3s ease;
+  padding:0px
+}
+
+#content {
+  transition: margin-left 0.3s;
+  margin-left: 250px;
+}
+
+#wrapper.toggled #sidebar {
+  margin-left: -250px;
+}
+
+#wrapper.toggled #content {
+  margin-left: 0;
+}
+
+#sidebar .list-group-item {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+}
+
+#sidebar .list-group-item:hover {
+  background-color: #495057;
 }
 
 /* Combines search and its companion filter */

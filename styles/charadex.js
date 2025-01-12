@@ -245,7 +245,7 @@ let fauxFolderButtons = (array, fauxFolder, params = urlParams) => {
         let urlParamArray = [];
         const uniqueArray = [...new Set(array.map(i => i[fauxFolder]))].filter(n => n);
         uniqueArray.forEach((i) => {
-            urlParamArray.push($('#charadex-filter-buttons a').clone().text(i).attr("href", baseURL + '?' + fauxFolder + '=' + i.toLowerCase()));
+            urlParamArray.push($('#charadex-filter-buttons a').clone() .html(`<img style="max-width:200px" src="https://i.postimg.cc/XJRT4sNx/Screenshot-2025-01-11-233928-removebg-preview.png${i.toLowerCase()}.png" alt="${i}" class="folder-icon"> ${i}`) .attr("href", baseURL + '?' + fauxFolder + '=' + i.toLowerCase()));
         });
 
         if (urlParamArray.length > 1) {

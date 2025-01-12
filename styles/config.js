@@ -34,13 +34,13 @@ let options = {
     index: {
 
         promptSheetPage: sheetPages.prompts,
-        numOfPrompts: 3,
+        numOfPrompts: 6,
 
         staffSheetPage: sheetPages.staff,
-        numOfStaff: 8,
+        numOfStaff: 6,
 
         masterlistSheetPage: sheetPages.masterlist,
-        numOfDesigns: 4,
+        numOfDesigns: 6,
     
     },
 
