@@ -51,7 +51,51 @@
 </head>
 <body>
 
+<style>
+   
 
+.slider-container {
+  display: flex;
+  width: 100%;
+  position: relative;
+  background: #fff;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+.container-thing {
+  width: 50%;
+  height: 100%;
+  overflow: auto;
+  transition: width 0.0s ease;
+}
+
+.container-thing.left {
+  background: #e8f0fe;
+}
+
+.container-thing.right {
+  background: #fce8e6;
+}
+
+.slider {
+  width: 20px;
+  background: #888;
+  cursor: ew-resize;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%; /* Start at the middle */
+  transform: translateX(-50%);
+}
+
+.handle {
+  width: 100%;
+  height: 100%;
+  background: #444;
+  position: relative;
+}
+</style>
 
     <!-- --------------------------------------------------------------------
     <-- Header
@@ -63,7 +107,26 @@
     <!-- Spinner for loading-->
     <div class="spinner-border m-auto" id="loading"></div>
 
-    <iframe width="100%" height="750px"   src="https://docs.google.com/spreadsheets/d/1N19DuaY-FqV98I2nMbm6leXxHYVhJPTbJikPzOVn9ng/edit?gid=2014536518#gid=2014536518/edit?usp=sharing&amp;rm=minimal&amp;single=true&amp;"></iframe>
+
+    <div class="slider-container">
+        <div class="container-thing left" id="container1" >
+          <!-- Content for the left container -->
+          <iframe width="100%" height="750px" src="https://docs.google.com/spreadsheets/d/1N19DuaY-FqV98I2nMbm6leXxHYVhJPTbJikPzOVn9ng/edit?gid=2014536518#gid=2014536518/edit?usp=sharing&amp;rm=minimal&amp;single=true&amp;"></iframe>
+
+        </div>
+        
+        <div class="slider">
+          <div class="handle"></div>
+        </div>
+        
+        <div class="container-thing right" id="container2">
+          <!-- Content for the right container -->
+          <iframe   width="100%" height="750px"  src="https://docs.google.com/spreadsheets/d/1N19DuaY-FqV98I2nMbm6leXxHYVhJPTbJikPzOVn9ng/edit?gid=1495041517#gid=1495041517/edit?usp=sharing&amp;rm=minimal&amp;single=true&amp;"></iframe>
+
+        </div>
+      </div>
+
+
 
     <div class="load-html" id="footer" data-source="includes/footer.html"></div>
 
@@ -84,4 +147,39 @@
     <script src="styles/config.js"></script>
     <script src="styles/charadex.js"></script>
     <script>frontPage(options.index);</script>
+    <script>
+        const slider = document.querySelector(".slider");
+const container1 = document.getElementById("container1");
+const container2 = document.getElementById("container2");
+
+let isDragging = false;
+
+slider.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  document.body.style.cursor = "ew-resize";
+});
+
+document.addEventListener("mousemove", (e) => {
+  if (!isDragging) return;
+
+  const containerBounds = document.querySelector(".slider-container").getBoundingClientRect();
+  let offset = e.clientX - containerBounds.left;
+
+  // Constrain slider within container bounds
+  offset = Math.max(0, Math.min(offset, containerBounds.width));
+
+  // Adjust widths of the containers
+  const percentage = (offset / containerBounds.width) * 100;
+  container1.style.width = `${percentage}%`;
+  container2.style.width = `${100 - percentage}%`;
+
+  // Position the slider
+  slider.style.left = `${percentage}%`;
+});
+
+document.addEventListener("mouseup", () => {
+  isDragging = false;
+  document.body.style.cursor = "default";
+});
+    </script>
 </body>
