@@ -630,6 +630,10 @@ p:last-child {
   overflow-x: hidden;
 }
 
+.side-nav li i{
+  margin-right:10px;
+}
+
 #sidebar {
   position: fixed;
   top: 0;
@@ -644,7 +648,17 @@ p:last-child {
   padding:0px
 }
 
+.profile-picture {
+ background-position:center;
+ background-size:cover
+}
 
+.header-sidebar {
+  background-color: #008cba;
+  color: #fff;
+  font-weight: 700;
+  padding: .5em .75em;
+}
 
 #content {
   transition: margin-left 0.3s;
