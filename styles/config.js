@@ -49,6 +49,9 @@ let options = {
     /* --------------------------------------------------------------- */
     masterlist: {
 
+        staffSheetPage: sheetPages.staff,
+        numOfStaff: 1,
+
         sheetPage: sheetPages.masterlist,
         logSheetPage: sheetPages.masterlistLog,
 

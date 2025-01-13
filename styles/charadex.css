@@ -645,6 +645,7 @@ p:last-child {
 }
 
 
+
 #content {
   transition: margin-left 0.3s;
   margin-left: 250px;
@@ -658,6 +659,12 @@ p:last-child {
   margin-left: 0;
 }
 
+
+@media (max-width:768px){
+  .sidebar-auto-load {
+    display:none
+  }
+}
 #sidebar .list-group-item {
   background-color: transparent;
   border: none;

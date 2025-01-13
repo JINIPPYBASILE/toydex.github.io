@@ -100,73 +100,84 @@
         <!-- Gallery Container
         ------------------------------------------------------------------- -->
        <div class="col-12 mx-auto">
-        <div id="charadex-gallery">
 
-
-            <!-- Filters
-            ----------------------------------------------------------------- -->
-            <div class="card bg-white p-md-5 p-4 mb-4">
-
-                <h3 class="mb-0"><a href="masterlist.html"><i class="fa-solid fa-folder"></i> Unsorted</a></h3>
-
-                <!-- Faux Folders
-                <-- Remove this if you'd like to make your own buttons instead!
-                ------------------------------------------------------------------- -->
-                <div style="display:none;" id="filter-buttons">
-                    <hr class="mb-3">
-                    <div class="row no-gutters mx-n1"></div>
-                </div>
-
-                <!-- Filters -->
-                <div style="display:none;" id="charadex-filters">
-                    <hr class="w-100 mb-4">
-                    <div class="row no-gutters m-n1">
-
-                        <!-- Custom Filter -->
-                        <div class="col-md-3 col-12 p-1" style="display: none;">
-                            <select class="form-control bg-faded" id="filter"></select>
-                        </div>
-
-                        <!-- Search Filter -->
-                        <div class="col-md-3 col-3 p-1" style="display: none;">
-                            <select class="form-control bg-faded" id="search-filter"></select>
-                        </div>
-
-                        <!-- Search Bar -->
-                        <div class="col-md col-9 p-1">
-                            <input class="form-control bg-faded search" type="search" placeholder="Search" id="search">
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Pagination -->
-                <div style="display: none;" id="charadex-pagination">
-                    <hr class="mb-4 mt-4">
-                    <div class="nav d-flex justify-content-center mb-n4">
-                        <div class="btn-prev page-item"><a class="page-link"><i class="fa fa-chevron-left"></i></a></div>
-                        <ul class="pagination pagination-top justify-content-center m-0"></ul>
-                        <div class="btn-next page-item"><a class="page-link"><i class="fa fa-chevron-right"></i></a></div>
-                    </div>
-                </div>
-
-                <!-- Prev & Next Topbar -->
-                <div style="display: none;" id="prevNext">
-                    <hr class="mb-4">
-                    <div class="row no-gutters px-2 mb-n3 font-weight-bold text-uppercase">
-                        <div class="col-6 px-1"><a id="entryPrev" href=""><i class="fa fa-chevron-left mr-2"></i><span></span></a></div>
-                        <div class="col-6 px-1 text-right order-md-1"><a id="entryNext" href=""><span></span><i class="fa fa-chevron-right ml-2"></i></a></div>
-                    </div>
-                </div>
-
+        <div class="row no-gutters">
+            <div class="col-md-3 col-lg-2 sidebar-auto-load">
+                <div class="load-html" id="sidebar-static" data-source="includes/sidebar.html"></div>
+  
             </div>
+            <div class="col-md-9 col-lg-10">
+                <div id="charadex-gallery">
 
 
-            <!-- Repeated Items Render Here
-            ----------------------------------------------------------------- -->
-            <ul class="row no-gutters list list-unstyled m-n2"></ul>
-
+                    <!-- Filters
+                    ----------------------------------------------------------------- -->
+                    <div class="card bg-white p-md-5 p-4 mb-4">
+        
+                        <h3 class="mb-0"><a href="masterlist.html"><i class="fa-solid fa-folder"></i> Unsorted</a></h3>
+        
+                        <!-- Faux Folders
+                        <-- Remove this if you'd like to make your own buttons instead!
+                        ------------------------------------------------------------------- -->
+                        <div style="display:none;" id="filter-buttons">
+                            <hr class="mb-3">
+                            <div class="row no-gutters mx-n1"></div>
+                        </div>
+        
+                        <!-- Filters -->
+                        <div style="display:none;" id="charadex-filters">
+                            <hr class="w-100 mb-4">
+                            <div class="row no-gutters m-n1">
+        
+                                <!-- Custom Filter -->
+                                <div class="col-md-3 col-12 p-1" style="display: none;">
+                                    <select class="form-control bg-faded" id="filter"></select>
+                                </div>
+        
+                                <!-- Search Filter -->
+                                <div class="col-md-3 col-3 p-1" style="display: none;">
+                                    <select class="form-control bg-faded" id="search-filter"></select>
+                                </div>
+        
+                                <!-- Search Bar -->
+                                <div class="col-md col-9 p-1">
+                                    <input class="form-control bg-faded search" type="search" placeholder="Search" id="search">
+                                </div>
+        
+                            </div>
+                        </div>
+        
+                        <!-- Pagination -->
+                        <div style="display: none;" id="charadex-pagination">
+                            <hr class="mb-4 mt-4">
+                            <div class="nav d-flex justify-content-center mb-n4">
+                                <div class="btn-prev page-item"><a class="page-link"><i class="fa fa-chevron-left"></i></a></div>
+                                <ul class="pagination pagination-top justify-content-center m-0"></ul>
+                                <div class="btn-next page-item"><a class="page-link"><i class="fa fa-chevron-right"></i></a></div>
+                            </div>
+                        </div>
+        
+                        <!-- Prev & Next Topbar -->
+                        <div style="display: none;" id="prevNext">
+                            <hr class="mb-4">
+                            <div class="row no-gutters px-2 mb-n3 font-weight-bold text-uppercase">
+                                <div class="col-6 px-1"><a id="entryPrev" href=""><i class="fa fa-chevron-left mr-2"></i><span></span></a></div>
+                                <div class="col-6 px-1 text-right order-md-1"><a id="entryNext" href=""><span></span><i class="fa fa-chevron-right ml-2"></i></a></div>
+                            </div>
+                        </div>
+        
+                    </div>
+        
+        
+                    <!-- Repeated Items Render Here
+                    ----------------------------------------------------------------- -->
+                    <ul class="row no-gutters list list-unstyled m-n2"></ul>
+        
+                </div>
+            </div>
         </div>
+        
+     
        </div>
 
     </div>
@@ -200,7 +211,7 @@
 
         <!-- Gallery Items
         ------------------------------------------------------------------- -->
-        <li class="col-lg-3 col-sm-6 p-2" id="charadex-entries">
+        <li class="col-lg-2 col-sm-4 p-2" id="charadex-entries">
             <a class=" h-100 cardlink" href="">
               
                 <div class="card-body card bg-white">
@@ -361,7 +372,7 @@
     <script src="styles/config.js"></script>
     <script src="styles/charadex.js"></script>
     <script>masterlist(options.masterlist);</script>
-
+    <script>charadexSmall(options.staff);</script>
 
 </body>
 
